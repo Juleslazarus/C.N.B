@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "open sans";
+}
+.navBar {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  background: gray;
+  background: #64a191;
+  justify-content: center;
+}
+.navHeaderText {
+  color: white;
+}
+.navBtnsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  gap: 1em;
+}
+.navBtnsContainer > a {
+  text-decoration: none;
+  color: white;
+  padding: 0.4em;
+  transition: all 0.2s;
+  border-radius: 5%;
+}
+.navBtnsContainer > a:hover {
+  background: #578a7c;
+  color: #ce124d;
+  text-decoration: underline white;
+  transform: translateY(-5px);
+}
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  font-size: 1em;
+}
+.sliderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+  border-bottom: 2px solid #64a191;
+  transition: all 0.4s;
+}
+.slider {
+  height: 4.5vh;
+  overflow: hidden;
+  align-items: center;
+}
+.slider div {
+  display: grid;
+  height: 4.5vh;
+  animation: slider 15s linear running;
+  animation-iteration-count: 1;
+  animation-delay: 0.4s;
+  transition: all 0.4s;
+  text-align: center;
+  align-items: center;
+  opacity: 0;
+}
+.slider9 {
+  opacity: 1 !important;
+  animation-delay: 15s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.fadeInText1 {
+  opacity: 1;
+  transition: all 0.4s;
+  animation: fadeOut1 15s linear running;
+}
+.fadeInText2 {
+  letter-spacing: 2px;
+  opacity: 1;
+  animation: slideIn1 1s linear running;
+  animation-delay: 15s;
+  transform: translateX(-420px);
+  animation-fill-mode: forwards;
+}
+
+.slider9 {
+  color: #ce124d;
+}
+
+@keyframes fadeOut1 {
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  95% {
+  }
+}
+/* @keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+@keyframes slider {
+  5% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  10% {
+    transform: translateY(0px);
+  }
+  12% {
+    transform: translateY(-4.5vh);
+  }
+  20% {
+    transform: translateY(-4.5vh);
+  }
+  22% {
+    transform: translateY(-9vh);
+  }
+  30% {
+    transform: translateY(-9vh);
+  }
+  32% {
+    transform: translateY(-13.5vh);
+  }
+  40% {
+    transform: translateY(-13.5vh);
+  }
+  42% {
+    transform: translateY(-18vh);
+  }
+  50% {
+    transform: translateY(-18vh);
+  }
+  52% {
+    transform: translateY(-22.5vh);
+  }
+  60% {
+    transform: translateY(-22.5vh);
+  }
+  62% {
+    transform: translateY(-27vh);
+  }
+  70% {
+    transform: translateY(-27vh);
+  }
+  72% {
+    transform: translateY(-31.5vh);
+  }
+  80% {
+    transform: translateY(-31.5vh);
+  }
+  82% {
+    transform: translateY(-36vh);
+  }
+  90% {
+    transform: translateY(-36vh);
+    opacity: 1;
+  }
+  92% {
+    transform: translateY(-36vh);
+  }
+  100% {
+    transform: translateY(-36vh);
+  }
+}
+
+/* the following styles are for the main content  */
+.mainContainer {
+  display: grid;
+  justify-content: center;
+}
+.mainHeaderText {
+  font-size: 1em;
+}
+
+/* the following styles are for the footer  */
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  justify-content: center;
+  bottom: 0;
+  position: fixed;
+  background: #64a191;
+  width: 100vw;
+}
+footer > div {
+  background: white;
+  margin: 0.3em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px rgb(71, 71, 71);
+}
+.smImgContainer {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-around;
+  align-items: center;
+}
+.smImgContainer img {
+  height: auto;
+  width: 2em;
+}
+.facebookImg {
+  height: auto;
+  width: 2.23em !important;
+}
+.gmailImg {
+  height: 2.3em !important;
+  width: 2.3em !important;
+}
+a img {
+  transition: all 0.3s;
+}
+a img:hover {
+  transform: translateY(-5px);
+}
+
+/* breakpoint for the hero styling for different platforms */
+@media all and (min-width: 1000px) {
+  .fadeInText1,
+  .slider > div {
+    font-size: 2em !important;
+  }
+  .headerContainer {
+    grid-template-rows: repeat(1, 10vh);
+  }
+  .mainHeaderText {
+    font-size: 2em !important;
+  }
+}
