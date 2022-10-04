@@ -1,10 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
+body {
+  position: relative;
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "open sans";
+}
+::-webkit-scrollbar {
+  width: 0.4em;
+  transition: all 0.3s;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #64a191;
+}
+::-webkit-scrollbar:hover {
+  width: 0.6em;
 }
 .navBar {
   display: grid;
@@ -46,6 +61,10 @@
   height: 20vh;
   font-size: 1em;
 }
+.headerBloomington {
+  text-decoration: none;
+  color: white;
+}
 .sliderWrapper {
   display: flex;
   justify-content: center;
@@ -74,11 +93,13 @@
   opacity: 1 !important;
   animation-delay: 15s ease-in-out;
   animation-fill-mode: forwards;
+  color: black;
 }
 .fadeInText1 {
   opacity: 1;
   transition: all 0.4s;
   animation: fadeOut1 15s linear running;
+  color: black;
 }
 .fadeInText2 {
   letter-spacing: 2px;
@@ -103,17 +124,6 @@
   95% {
   }
 }
-/* @keyframes fadeIn1 {
-  0% {
-    opacity: 0;
-  }
-  95% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
 
 @keyframes slider {
   5% {
@@ -154,29 +164,29 @@
     transform: translateY(-22.5vh);
   }
   62% {
-    transform: translateY(-29vh);
+    transform: translateY(-27vh);
   }
-  90% {
-    transform: translateY(-29vh);
+  70% {
+    transform: translateY(-27vh);
   }
-  92% {
+  72% {
     transform: translateY(-31.5vh);
   }
   80% {
     transform: translateY(-31.5vh);
+    opacity: 1;
   }
   82% {
     transform: translateY(-36vh);
   }
   90% {
     transform: translateY(-36vh);
-    opacity: 1;
   }
   92% {
-    transform: translateY(-36vh);
+    transform: translateY(-40.5vh);
   }
   100% {
-    transform: translateY(-36vh);
+    transform: translateY(-40.5vh);
   }
 }
 
@@ -188,6 +198,7 @@
 .mainHeaderText {
   font-size: 1em;
 }
+/* this is styling for the admin form  */
 
 /* the following styles are for the footer  */
 
@@ -199,6 +210,11 @@ footer {
   position: fixed;
   background: #64a191;
   width: 100vw;
+}
+.footerText {
+  font-weight: 900;
+  padding-right: 0.4em;
+  padding-left: 0.4em;
 }
 footer > div {
   background: white;
@@ -224,11 +240,11 @@ footer > div {
   height: 2.3em !important;
   width: 2.3em !important;
 }
-a img {
+footer a img {
   transition: all 0.3s;
 }
-a img:hover {
-  transform: translateY(-2px);
+footer a img:hover {
+  transform: translateY(-4px);
 }
 .recentContainer {
   display: grid;
@@ -263,6 +279,8 @@ a img:hover {
   text-align: center;
 }
 .previousContainer > img {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
   height: auto;
   width: 30em;
   border-radius: 1em;
@@ -274,18 +292,20 @@ a img:hover {
   cursor: pointer;
   transform: translateY(-10px);
   box-shadow: 1px 1px 35px 1px gray;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 /* breakpoint for the hero styling for different platforms */
 @media all and (min-width: 1000px) {
   .fadeInText1,
   .slider > div {
-    font-size: 2em !important;
+    font-size: 2.01em !important;
   }
   .headerContainer {
     grid-template-rows: repeat(1, 10vh);
   }
   .mainHeaderText {
-    font-size: 2em !important;
+    font-size: 1.7em !important;
   }
 }
 @media all and (max-width: 1000px) {
@@ -295,6 +315,10 @@ a img:hover {
   }
   .mainHeaderText {
     font-size: 1.7em;
+  }
+  .previousContainer > img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
   }
 }
 /* the following is for styles located on pages/media.html */
@@ -335,6 +359,14 @@ a img:hover {
 .twitterCard {
   position: relative;
   overflow: hidden;
+  box-shadow: 1px 1px 15px 1px black;
+  transition: all 0.4s;
+}
+.instaCard:hover,
+.fbCard:hover,
+.twitterCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 1px 1px 25px 1px rgb(80, 80, 80);
 }
 .instaCardBtn,
 .fbCardBtn,
@@ -351,7 +383,7 @@ a img:hover {
   border-radius: 2em;
   font-size: 2em;
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 .twitterCardBtn {
   left: 30% !important;
@@ -419,14 +451,172 @@ a img:hover {
   height: auto;
   width: 35em;
 }
+.pastContainer {
+  margin-bottom: 5em;
+}
 .bpEngLink > img,
 .bpSpanLink > img {
   height: auto;
   width: 35em;
+  box-shadow: 1px 1px 15px 1px black;
+  transition: all 0.4s;
+}
+.bpEngLink > img:hover,
+.bpSpanLink > img:hover {
+  transform: translateY(-10px);
+  box-shadow: 1px 1px 25px 1px rgb(80, 80, 80);
 }
 
 .currentContainer > img,
 .pastContainer > img {
   height: auto;
   width: 35em;
+}
+
+/* breakpoint for mobile users */
+@media all and (max-width: 1100px) {
+  .currentContainer,
+  .pastContainer {
+    grid-template-columns: repeat(1, auto) !important;
+    gap: 3em !important;
+  }
+  .bpEngLink,
+  .bpSpanLink {
+    width: 100vw !important;
+  }
+  .bpPetitionSpanText {
+    position: absolute;
+    top: 62%;
+    left: 38.5%;
+  }
+  .bpEngLink > img,
+  .bpSpanLink > img {
+    height: auto;
+    width: 20em !important;
+  }
+
+  .currentContainer > img,
+  .pastContainer > img {
+    height: auto;
+    width: 20em !important;
+  }
+  .navBar {
+    width: 100vw !important;
+  }
+}
+
+/* the following are styles for the admin page  */
+
+.adminHeroContainer {
+  margin-top: 5em;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, auto);
+  text-align: center;
+}
+.adminHeroText {
+  opacity: 1;
+  transition: all 0.4ss;
+  animation: opacityOne 1.3s linear running;
+}
+.adminHeroSubtext {
+  opacity: 1;
+  transition: all 0.4ss;
+  animation: opacityTwo 2.6s linear running;
+}
+@keyframes opacityOne {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityTwo {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.adminFormContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, auto);
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  background: #64a191;
+  padding: 2em;
+  border-radius: 2em;
+  color: white;
+  font-size: 1.3em;
+}
+input,
+.requestDesc {
+  border-radius: 0.5em;
+  border: none;
+  font-size: 1em;
+  resize: vertical;
+  padding: 0.3em;
+}
+
+.adminPopupContainer {
+  transform: translateY(-1000px);
+  position: fixed;
+  height: 50em;
+  width: 25em;
+  top: 0;
+  left: 1.5%;
+  z-index: 1;
+  background: rgba(80, 80, 80, 0.8);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+.adminOverlay > button,
+.adminOverlay > a {
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  text-decoration: none;
+  color: black;
+}
+.adminOverlay > a {
+  font-size: 1.3em;
+  background: white;
+}
+.adminOverlay > button:hover,
+.adminOverlay > a:hover {
+  cursor: pointer;
+}
+.closeAdminOverlayBtn {
+  font-weight: bold;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+.closeOverLayContainer {
+  position: absolute;
+  top: 0;
+  left: 0%;
+}
+
+/* breakpoint for desktop users  */
+@media all and (min-width: 1000px) {
+  .adminPopupContainer {
+    width: 45em !important;
+    left: 30% !important;
+  }
 }

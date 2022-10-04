@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concerned Neighbors Of Bloomington</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script defer src="../script.js"></script>
+    <link rel="js icon" href="../images/cnblogo.jpg" />
+  </head>
+  <body>
+    <nav class="navBar">
+      <div class="navHeaderContainer">
+        <h1 class="navHeaderText">
+          Concerned Neighbors:
+          <a class="headerBloomington" href="#">Bloomington</a>
+        </h1>
+      </div>
+      <div class="navBtnsContainer">
+        <a class="navHome" href="../index.html">HOME</a>
+        <a class="navHome" href="./petitions.html">PETITIONS</a>
+        <a class="navHome" href="./media.html">SOCIAL MEDIA</a>
+      </div>
+    </nav>
+    <div class="adminHeroContainer">
+      <h1 class="adminHeroText">Welcome Concerned Neighbor Member</h1>
+      <h1 class="adminHeroSubtext">Use The Form Below To Submit Requests:</h1>
+    </div>
+    <div class="adminFormContainer">
+      <form action="https://formsubmit.co/your@email.com" method="POST">
+        <label for="name" class="nameLabel">Name:</label>
+        <input type="text" for="name" required placeholder="Full Name" />
+        <label for="email" class="emailLabel">Email Address:</label>
+        <input
+          type="email"
+          for="email"
+          required
+          placeholder="youremail@domain.com"
+        />
+        <label for="contact" class="contactLabel"
+          >Social Media For Returned Contact (optional)</label
+        >
+        <input type="text" for="contact" placeholder="IG, FB, etc" />
+        <label for="requestDesc" class="textareaLabel"
+          >Briefly Describe Request</label
+        >
+        <textarea
+          class="requestDesc"
+          name="requestArea"
+          required
+          placeholder="Make this image larger, Change this color, etc"
+        ></textarea>
+      </form>
+    </div>
+  </body>
+</html>
