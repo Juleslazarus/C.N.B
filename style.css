@@ -12,6 +12,10 @@
   background: gray;
   background: #64a191;
   justify-content: center;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
 }
 .navHeaderText {
   color: white;
@@ -30,7 +34,7 @@
   border-radius: 5%;
 }
 .navBtnsContainer > a:hover {
-  background: #578a7c;
+  background: #598a9c;
   color: #ce124d;
   text-decoration: underline white;
   transform: translateY(-5px);
@@ -150,12 +154,12 @@
     transform: translateY(-22.5vh);
   }
   62% {
-    transform: translateY(-27vh);
+    transform: translateY(-29vh);
   }
-  70% {
-    transform: translateY(-27vh);
+  90% {
+    transform: translateY(-29vh);
   }
-  72% {
+  92% {
     transform: translateY(-31.5vh);
   }
   80% {
@@ -200,7 +204,7 @@ footer > div {
   background: white;
   margin: 0.3em;
   border-radius: 5px;
-  box-shadow: 1px 1px 10px 1px rgb(71, 71, 71);
+  box-shadow: 1px 1px 10px 1px rgb(91, 91, 91);
 }
 .smImgContainer {
   display: grid;
@@ -224,9 +228,53 @@ a img {
   transition: all 0.3s;
 }
 a img:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
-
+.recentContainer {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2em;
+  margin-bottom: 10em;
+}
+.upcomingContainer {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  justify-content: center;
+  text-align: center;
+}
+.upcomingContainer > img {
+  height: auto;
+  width: 30em;
+  border-radius: 1em;
+  transition: all 0.4s;
+  box-shadow: 1px 1px 20px 1px black;
+  margin-top: 1.5em;
+}
+.upcomingContainer > img:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  box-shadow: 1px 1px 35px 1px gray;
+}
+.previousContainer {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  text-align: center;
+}
+.previousContainer > img {
+  height: auto;
+  width: 30em;
+  border-radius: 1em;
+  transition: all 0.4s;
+  box-shadow: 1px 1px 20px 1px black;
+  margin-top: 1.5em;
+}
+.previousContainer > img:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  box-shadow: 1px 1px 35px 1px gray;
+}
 /* breakpoint for the hero styling for different platforms */
 @media all and (min-width: 1000px) {
   .fadeInText1,
@@ -239,4 +287,146 @@ a img:hover {
   .mainHeaderText {
     font-size: 2em !important;
   }
+}
+@media all and (max-width: 1000px) {
+  .fadeInText1,
+  .slider > div {
+    font-size: 2.01em;
+  }
+  .mainHeaderText {
+    font-size: 1.7em;
+  }
+}
+/* the following is for styles located on pages/media.html */
+.mediaMainContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(1, auto);
+  justify-content: center;
+  gap: 5em;
+  margin-bottom: 10em;
+  margin-top: 5em;
+}
+
+/* breakpoint for mobile platforms:  */
+@media all and (max-width: 1000px) {
+  .mediaMainContainer {
+    grid-template-columns: repeat(1, auto) !important;
+    grid-template-rows: repeat(3, auto) !important;
+  }
+  .instaCardImg,
+  .fbCardImg,
+  .twitterCardImg {
+    height: auto;
+    width: 20em !important;
+  }
+  .instaCardCaption {
+    bottom: 0 !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    filter: blur(100) !important;
+    color: black !important;
+
+    opacity: 1 !important;
+  }
+}
+/* breakpoint over */
+.instaCard,
+.fbCard,
+.twitterCard {
+  position: relative;
+  overflow: hidden;
+}
+.instaCardBtn,
+.fbCardBtn,
+.twitterCardBtn {
+  position: absolute;
+  text-decoration: none;
+  background: #64a191;
+  border: none;
+  color: white;
+  padding: 1em;
+  bottom: -10%;
+  left: 40%;
+  text-align: center;
+  border-radius: 2em;
+  font-size: 2em;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.twitterCardBtn {
+  left: 30% !important;
+}
+
+.twitterCard:hover > .twitterCardBtn,
+.fbCard:hover > .fbCardBtn,
+.instaCard:hover > .instaCardBtn {
+  opacity: 1;
+  transform: translateY(-12px);
+  cursor: pointer;
+}
+.twitterCardBtn:hover,
+.fbCardBtn:hover,
+.instaCardBtn:hover {
+  color: #ce124d;
+  text-decoration: underline;
+  text-shadow: 2px 2px black;
+}
+
+.instaCardImg,
+.fbCardImg,
+.twitterCardImg {
+  height: auto;
+  width: 35em;
+  box-shadow: 1px 1px 15px 1px #36554d;
+}
+
+/* breakpoint for index.html page for mobile users  */
+@media all and (max-width: 1000px) {
+  .upcomingContainer > img {
+    height: auto;
+    width: 20em !important;
+  }
+  .previousContainer > img {
+    height: auto;
+    width: 20em !important;
+  }
+  .instaCardBtn,
+  .fbCardBtn,
+  .twitterCardBtn {
+    opacity: 1 !important;
+    left: -5% !important;
+    font-size: 1.3em;
+  }
+}
+
+/* this section is the styling for all the Petitions.html page  */
+.petitionsMainContainer {
+  display: grid;
+  justify-content: center;
+  gap: 2em;
+  width: 100vw;
+  text-align: center;
+  margin-top: 1em;
+}
+.currentContainer,
+.pastContainer {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 2em;
+}
+.currentContainer > a,
+.pastContainer > a {
+  height: auto;
+  width: 35em;
+}
+.bpEngLink > img,
+.bpSpanLink > img {
+  height: auto;
+  width: 35em;
+}
+
+.currentContainer > img,
+.pastContainer > img {
+  height: auto;
+  width: 35em;
 }
