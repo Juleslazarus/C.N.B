@@ -61,7 +61,7 @@ body {
   height: 20vh;
   font-size: 1em;
 }
-.headerBloomington {
+.openAdminBtn {
   text-decoration: none;
   color: white;
 }
@@ -605,6 +605,7 @@ input,
   position: absolute;
   top: 1%;
   left: 1%;
+  z-index: 10;
 }
 
 .closeOverLayContainer {
